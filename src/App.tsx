@@ -1,12 +1,19 @@
 import React from 'react';
-import './App.css';
+import {Header} from './layout/header/Header';
+import {Aside} from './layout/aside/Aside';
+import {Container} from './components/Container';
 
 function App() {
   return (
-    <div className="App">
-     Hello, samurai! Let's go!
-    </div>
+    <>
+        <Aside />
+        <Header />
+        <main>
+            <Container>
+                Main
+            </Container>
+        </main>
+    </>
   );
 }
-
 export default App;
