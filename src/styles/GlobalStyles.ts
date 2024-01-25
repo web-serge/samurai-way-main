@@ -43,7 +43,7 @@ export const GlobalStyles = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;;
     font-size: 1.8rem;
     line-height: 1;
-    height: 100vh;
+    height: calc(100vh - 7rem);
     overflow: hidden;
   }
 
@@ -54,17 +54,17 @@ export const GlobalStyles = createGlobalStyle`
 
   main {
     height: 100%;
-    padding-left: calc(${theme.size.aside}rem + 5px);
     background-color: ${theme.colors.input_bg};
     overflow-y: auto;
     background: ${theme.colors.secondary_bg};
+    padding: 1rem 0 1rem calc(${theme.size.aside}rem + 5px);
 
     text-align: center;
-    font-size: 30rem;
+    font-size: 3rem;
     color: cadetblue;
 
     @media ${theme.media.mobile} {
-      padding: 0 .5rem;
+      padding:.5rem;
     }
   }
 `
