@@ -1,54 +1,86 @@
 import styled from 'styled-components';
 import {theme} from '../../styles/theme';
-import {Container} from '../../components/Container';
+import {jump} from '../../styles/animations';
+import {InputBox} from '../../components/Input';
 
 const Header = styled.header `
   background-color: ${theme.colors.primary_bg};
   width: 100%;
-  height: 7rem;
+  min-height: ${theme.size.headerHeight}rem;
+
   display: flex;
   align-items: center;
-  padding-left: ${theme.size.aside}rem;
+  justify-content: center;
+  gap: 2rem;
+  color: white;
+  flex-wrap: wrap;
+  padding: .5rem 1rem;
   
-  & ${Container} {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
+  & input {
+    max-width: 50%;
+    
+    @media ${theme.media.mobile} {
+      max-width: 100%;
+    }
   }
   
+  & ${InputBox} {
+    text-align: center;
+  }
+
   @media ${theme.media.mobile} {
-    padding: 0 .5rem;
+    padding:.5rem;
+    justify-content: center;
+    gap: 1rem;
   }
 `
 
-const inputBox = styled.div `
-  position: relative;
-  max-width: 90%;
-  flex-grow: 1;
-  padding: 0 5px;
-  line-height: 1;
-  min-width: 12rem;
+const logoBox = styled.a `
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: ${theme.size.headerHeight}rem;
+  text-transform: uppercase;
+  background: ${theme.colors.primary_bg};
+  align-self: flex-start;
   
-  & button {
-    position: absolute;
-    top: 50%;
-    right: .6rem;
-    transform: translateY(-50%);
-    font-size: 3rem;
+  & img {
+    width: 4rem;
+    padding: .5rem;
   }
   
-  & input {
-    width: 100%;
-    border: none;
-    outline: none;
-    padding: 1rem 5px 1rem 1.9rem;
-    border-radius: 5px;
-    font-size: inherit;
-    background-color: ${theme.colors.input_bg};
+  & h1 {
+    font-size: 2.5rem;
+    display: inline-block;
+  }
+
+  & span{
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      display: inline-block;
+      border-radius: 50%;
+      width: .5rem;
+      height: .5rem;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: indianred;
+      animation: ${jump} 2s infinite;
+    }
+
+    &:after {
+      content: 'community';
+      position: absolute;
+      font-size: .7rem;
+      top: 100%;
+      left: 0;
+    }
   }
 `
 export const S = {
     Header,
-    inputBox,
+    logoBox
 }

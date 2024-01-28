@@ -11,6 +11,20 @@ export const GlobalStyles = createGlobalStyle`
     //outline: 1px solid red;
   }
 
+  *::-webkit-scrollbar {
+    width: .9rem;
+  }  
+  *::-webkit-scrollbar-track {
+    background: lightgrey;
+    border-radius: 1.6rem;
+    margin: .2rem 0;
+  }  
+  *::-webkit-scrollbar-thumb {
+    background: crimson;
+    border: 3px solid lightgrey;
+    border-radius: 1.6rem;
+  }
+  
   li {
     list-style: none;
   }
@@ -19,18 +33,27 @@ export const GlobalStyles = createGlobalStyle`
     text-decoration: none;
     color: inherit;
     cursor: pointer;
+    font-family: inherit;
 
     &:hover {
       opacity: .8;
     }
   }
-
+  
+  hr {
+    margin: 0;
+    border: 1px dashed rgba(145, 158, 171, 0.2);
+    width: 100%;
+  }
+  
   button {
     cursor: pointer;
     border: none;
     background: transparent;
     line-height: 0;
     font-size: inherit;
+    color: inherit;
+    font-family: inherit;
   }
 
   html {
@@ -40,31 +63,31 @@ export const GlobalStyles = createGlobalStyle`
   body {
     font-family: 'Roboto', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;;
+    -moz-osx-font-smoothing: grayscale;
+    
     font-size: 1.8rem;
     line-height: 1;
-    height: calc(100vh - 7rem);
+    color: ${theme.colors.text};
     overflow: hidden;
   }
 
 
   #root {
-    height: 100%;
+    height: 100vh;
   }
 
   main {
     height: 100%;
-    background-color: ${theme.colors.input_bg};
-    overflow-y: auto;
-    background: ${theme.colors.secondary_bg};
-    padding: 1rem 0 1rem calc(${theme.size.aside}rem + 5px);
-
+    padding: 1rem 0 1rem calc(${theme.size.asideWidth}rem + 5px);
     text-align: center;
     font-size: 3rem;
-    color: cadetblue;
+
+    position: relative;
+
+    
 
     @media ${theme.media.mobile} {
-      padding:.5rem;
+      padding: .5rem;
     }
   }
 `
