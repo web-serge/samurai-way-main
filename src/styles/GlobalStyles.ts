@@ -20,7 +20,7 @@ export const GlobalStyles = createGlobalStyle`
     margin: .2rem 0;
   }  
   *::-webkit-scrollbar-thumb {
-    background: crimson;
+    background: ${theme.colors.accentOpacity};
     border: 3px solid lightgrey;
     border-radius: 1.6rem;
   }
@@ -78,7 +78,7 @@ export const GlobalStyles = createGlobalStyle`
 
   main {
     height: 100%;
-    padding: 1rem 0 1rem calc(${theme.size.asideWidth}rem + 5px);
+ 
     text-align: center;
     font-size: 3rem;
 

@@ -21,9 +21,9 @@ export const MemberCard: React.FC<UserCardItemPropsType> = (props) => {
             </a>
             <small>{`Active ${props.lastOnline}`}</small>
             <ButtonBox >
-                <button><FontAwesomeIcon icon={faUserPlus} /></button>
-                <button><FontAwesomeIcon icon={faEnvelope} /></button>
-                <button><FontAwesomeIcon icon={faPhoneVolume} /></button>
+                <button><i className="fa-duotone fa-user-plus"></i></button>
+                <button><i className="fa-duotone fa-message-plus"></i></button>
+                <button><i className="fa-duotone fa-phone-plus"></i></button>
             </ButtonBox>
             <hr/>
             <Statistics>
@@ -68,14 +68,15 @@ const Card = styled.li `
   }
 
   &:hover {
-    background: rgba(36, 41, 46, 0.25);
+    background: rgba(0, 167, 111, .3);
   }
 
   & button {
     color: grey;
 
     &:hover {
-      color: #000000;
+      color: rgb(0, 167, 111);
+      transform: scale(1.1);
     }
   }
 `

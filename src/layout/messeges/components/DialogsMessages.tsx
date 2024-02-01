@@ -38,7 +38,7 @@ const MessagesContainer = styled.div`
   height: 100%;
 
   @media ${theme.media.mobile} {
-    height: 60%;
+    height: 68%;
   }
   
   & hr {

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import {theme} from '../styles/theme';
 
 export const Button = styled.button `
-  background: ${theme.colors.primary_bg};
+    background: ${theme.colors.accent};
   padding: .5em 1em;
   color: ${theme.colors.lightingColor};
   border-radius: 10px;
@@ -16,7 +16,8 @@ export const Button = styled.button `
   }
 
   &:hover, &:focus-visible {
-    background: ${theme.colors.accent};
+      color: white;
+      box-shadow: 3px 3px 7px ${theme.colors.accent};
   }
 
   &:active svg {
