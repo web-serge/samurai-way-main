@@ -4,7 +4,13 @@ import {Flex} from '../../components/Flex';
 import {TextField} from '../../components/Input';
 import logo from '../../assets/images/rocket.svg';
 
-export const Header = () => {
+export const Header = (props: {menu: boolean, toogleMenu: () => void}) => {
+    function onClickButtonHandler () {
+        props.toogleMenu()
+    }
+
+
+
     return (
         <S.Header>
                 <S.logoBox>
@@ -21,6 +27,8 @@ export const Header = () => {
                             <i className="fa-duotone fa-user-tie"></i>
                             <small style={{whiteSpace: 'nowrap'}}>HI, USER</small>
                         </Flex>
+                        {!props.menu && <button onClick={onClickButtonHandler}><i className="fa-duotone fa-bars"></i></button>}
+                        {props.menu && <button onClick={onClickButtonHandler}><i className="fa-duotone fa-xmark"></i></button>}
                     </Flex>
         </S.Header>
     )

@@ -4,7 +4,7 @@ export const theme = {
         secondary_bg: '#F5F5F5',
         // accent: '#DC143CFF',
         accent: 'rgb(0, 167, 111)',
-        accentOpacity: 'rgba(0, 167, 111, .7)',
+        accentOpacity: 'rgba(0, 167, 111, .6)',
         lightingColor: '#fff',
         text: 'rgb(33, 43, 54)',
         shadow: 'rgba(145, 158, 171, 0.2) 0 0 10px 0, rgba(145, 158, 171, 0.12) 0 12px 4px -4px',

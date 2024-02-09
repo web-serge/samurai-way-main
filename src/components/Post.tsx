@@ -10,16 +10,19 @@ export const Post = () => {
     function onLikeHandler() {
         count > 0 ? setCount(--count) : setCount(++count)
     }
-
+    const randomNum = Math.ceil(Math.random()*16)
     return (
         <SPost>
             <img
-                src={`https://api-prod-minimal-v510.vercel.app/assets/images/travel/travel_${Math.ceil(Math.random()*16)}.jpg`}
+                src={`https://api-prod-minimal-v510.vercel.app/assets/images/travel/travel_${randomNum}.jpg`}
                 alt=""/>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At laboriosam mollitia nemo neque quae! Autem culpa dolor dolorem error, exercitationem facere, nesciunt non optio perspiciatis quam totam unde voluptas? Harum necessitatibus quas quia soluta. Ad amet aperiam corporis ea, necessitatibus nesciunt nisi placeat qui quia similique tenetur, vel veritatis voluptas! Aliquam blanditiis nobis quam.</p>
             <div>
                 <div>
-                    <button onClick={onLikeHandler} className={count > 0 ? 'green' : ''}><i className="fa-duotone fa-thumbs-up"></i></button> <small>{count}</small>
+                    <button onClick={onLikeHandler} className={count > 0 ? 'green' : ''}>
+                        <i className="fa-duotone fa-thumbs-up"></i>
+                    </button>
+                    <small>{count}</small>
                 </div>
                 <div>
                     <button><i className="fa-duotone fa-comment-lines"></i></button>
@@ -100,10 +103,6 @@ const SPost = styled.li`
                 opacity: 1;
                 visibility: visible;
             }
-        }
-
-        & button + button {
-            margin-left: 2.5rem;
         }
     }
 

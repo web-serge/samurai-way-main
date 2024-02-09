@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import {theme} from '../../styles/theme';
 import {faAddressCard, faHeart} from '@fortawesome/free-regular-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faPeopleCarryBox} from '@fortawesome/free-solid-svg-icons';
 import {Textarea} from '../../components/Textarea';
 import {Post} from '../../components/Post';
+import s from './style.module.css';
 
 export const Profile = () => {
     return (
@@ -16,42 +16,48 @@ export const Profile = () => {
                     <h5>Your Name</h5>
                 </ProfileUserInfo>
                 <ProfileTabs>
-                    <li><a href="">
-                        <FontAwesomeIcon icon={faAddressCard}/> Profile
-                    </a></li>
-                    <li><a href="">
-                        <i className="fa-duotone fa-heart"></i> Followers
-                    </a></li>
-                    <li><a href="">
-                        <i className="fa-duotone fa-person-falling-burst"></i> Friends
-                    </a></li>
+                    <li>
+                        <a href="" className={s.bannerIcon}>
+                            <FontAwesomeIcon icon={faAddressCard}/> Profile
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" className={s.bannerIcon}>
+                            <i className="fa-duotone fa-heart"></i> Followers
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" className={s.bannerIcon}>
+                            <i className="fa-duotone fa-person-falling-burst"></i> Friends
+                        </a>
+                    </li>
                 </ProfileTabs>
             </ProfileBanner>
             <Textarea/>
             <PostsContainer>
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
+                <Post/>
+                <Post/>
+                <Post/>
+                <Post/>
+                <Post/>
+                <Post/>
+                <Post/>
+                <Post/>
+                <Post/>
+                <Post/>
+                <Post/>
+                <Post/>
+                <Post/>
+                <Post/>
+                <Post/>
+                <Post/>
+                <Post/>
+                <Post/>
+                <Post/>
+                <Post/>
+                <Post/>
+                <Post/>
+                <Post/>
             </PostsContainer>
         </Container>
     )

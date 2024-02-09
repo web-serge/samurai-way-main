@@ -33,7 +33,10 @@ export const Textarea = () => {
     return (
         <TextContainer>
             <textarea placeholder={'Write your message...'}/>
-            <Button type={'submit'}>Send <FontAwesomeIcon icon={faPaperPlane}/></Button>
+            <Button type={'submit'}>
+                Send
+                <FontAwesomeIcon icon={faPaperPlane}/>
+            </Button>
         </TextContainer>
     )
 }
