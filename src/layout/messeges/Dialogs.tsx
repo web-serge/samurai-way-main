@@ -1,19 +1,20 @@
 import {Container} from '../../components/Container';
 import {Flex} from '../../components/Flex';
-import {UserListType} from '../members/Members';
 import React from 'react';
 import {DialogsList} from './components/DialogsList';
-import {DialogsMessages} from './components/DialogsMessages';
+import {Chat} from '../../components/messages/Chat';
+import {MessagesType, UserListType} from '../../store';
 
 type MessagesPropsType = {
     usersList: Array<UserListType>
+    messages: MessagesType[]
 }
 export const Dialogs: React.FC<MessagesPropsType> = (props) => {
     return (
-        <Container as={'section'} style={{height:'85%'}}>
-            <Flex align={'flex-start'} gap={1} wrap={'wrap'} height={'100%'}>
+        <Container as={'section'} style={{height:'95%', display: 'flex', justifyContent:'center', alignItems:'center'}}>
+            <Flex align={'flex-start'} gap={1} height='60%'>
                 <DialogsList usersList={props.usersList}/>
-                <DialogsMessages/>
+                <Chat messages={props.messages}/>
             </Flex>
         </Container>
     );

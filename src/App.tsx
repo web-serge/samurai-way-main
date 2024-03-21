@@ -4,234 +4,33 @@ import {Aside} from './layout/aside/Aside';
 import {Header} from './layout/header/Header';
 import {Profile} from './layout/profile/Profile';
 import {Dialogs} from './layout/messeges/Dialogs';
-import {Members, UserListType} from './layout/members/Members';
+import {Members} from './layout/members/Members';
+import News from './layout/news/News';
+import {ActionType, StateType, StoreType} from './store';
 
-function App() {
-    const usersList: Array<UserListType> = [
-        {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        }, {
-            imgUrl: `https://api-prod-minimal-v510.vercel.app/assets/images/avatar/avatar_${Math.ceil(Math.random() * 25)}.jpg`,
-            name: 'User Name',
-            lastOnline: `${Math.ceil(Math.random() * 29)} days ago`
-        },
-    ]
-    let [menu, setMenu] = useState<boolean>(true)
+type AppType = {
+    state: StateType
+    dispatch: (action: ActionType) => void
+}
+
+function App({state, dispatch}: AppType) {
+    let [isAside, setIsAside] = useState<boolean>(true)
 
     function toggleMenu() {
-        setMenu(!menu)
+        setIsAside(!isAside)
     }
 
     return (
         <>
-            {menu && <Aside/>}
-            <Header menu={menu} toogleMenu={toggleMenu}/>
+            <Header menu={isAside} toogleMenu={toggleMenu}/>
             <main>
-                <Route path={'/profile'} render={() => <Profile/>}/>
-                <Route path={'/dialogs'} render={() => <Dialogs usersList={usersList}/>}/>
-                <Route path={'/members'} render={() => <Members usersList={usersList}/>}/>
+                {isAside && <Aside asideItem={state.aside}/>}
+                <Route exact path={'/'} render={() => <Profile posts={state.profilePage.posts}
+                                                               dispatch={dispatch}
+                                                               text={state.profilePage._text}/>}/>
+                <Route path={'/news'} render={() => <News/>}/>
+                <Route path={'/dialogs'} render={() => <Dialogs usersList={state.membersPage.usersList} messages={state.messagesPage}/>}/>
+                <Route path={'/members'} render={() => <Members usersList={state.membersPage.usersList}/>}/>
             </main>
         </>
     );

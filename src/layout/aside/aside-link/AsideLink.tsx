@@ -1,12 +1,8 @@
 import {NavLink} from 'react-router-dom';
 import React from 'react';
+import {AsideLinkType} from '../../../store';
 
-export type AsideLinkPropsType = {
-    href: string
-    name: string
-    icon: string
-}
-export const AsideLink = ({href, name, icon}: AsideLinkPropsType) => {
+export const AsideLink = ({href, name, icon}: AsideLinkType) => {
     return (
         <li>
             <NavLink to={href}>

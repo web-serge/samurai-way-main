@@ -1,8 +1,11 @@
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 import {theme} from '../../styles/theme';
-
+const animation = keyframes`
+    from{opacity: 0; transform: translateX(-100%)}
+    to{opacity: 1; transform: translateX(0);}
+`
 const aside = styled.aside`
-  position: fixed;
+  //position: absolute;
   width: ${theme.size.asideWidth}rem;
   height: 100%;
   top: 5rem;
@@ -16,6 +19,8 @@ const aside = styled.aside`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+    
+    animation: ${animation} .5s;
   
   & nav {
     width: 100%;

@@ -6,7 +6,11 @@ import {theme} from '../../../styles/theme';
 import styled from 'styled-components';
 import {Textarea} from '../../../components/Textarea';
 
-export const DialogsMessages = () => {
+type DialogsMessagesType = {
+    messages: string[]
+}
+export const DialogsMessages = ({messages}: DialogsMessagesType) => {
+    const messagesMap = messages.map((el, idx) => <ItemMessage key={idx}>{el}</ItemMessage>)
     return (
             <MessagesContainer>
                 <MessagesHeader>
@@ -17,15 +21,10 @@ export const DialogsMessages = () => {
                 </MessagesHeader>
                 <hr/>
                 <Flex as={'ul'} align={'flex-end'} direction={'column'} justify={'flex-start'} gap={1}>
-                    <ItemMessage>Lorem </ItemMessage>
-                    <ItemMessage>message2</ItemMessage>
-                    <ItemMessage>message3 </ItemMessage>
-                    <ItemMessage>message3 </ItemMessage>
-                    <ItemMessage>message3 </ItemMessage>
-                    <ItemMessage>message3 </ItemMessage>
+                    {messagesMap}
                 </Flex>
                 <hr/>
-                <Textarea />
+                {/*<Textarea />*/}
             </MessagesContainer>
     )
 }

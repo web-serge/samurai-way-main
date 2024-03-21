@@ -1,13 +1,31 @@
 import {Container} from '../../components/Container';
 import styled from 'styled-components';
 import {theme} from '../../styles/theme';
-import {faAddressCard, faHeart} from '@fortawesome/free-regular-svg-icons';
+import {faAddressCard} from '@fortawesome/free-regular-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {Textarea} from '../../components/Textarea';
 import {Post} from '../../components/Post';
 import s from './style.module.css';
+import {ActionType, PostType} from '../../store';
+import React from 'react';
+import {addPostAC, updateTextAC} from '../../redux/profile-reducer';
 
-export const Profile = () => {
+type ProfileType = {
+    posts: PostType[]
+    dispatch: (action: ActionType) => void
+    text: string
+}
+export const Profile = (props: ProfileType) => {
+
+    function addPost() {
+        props.dispatch(addPostAC())
+    }
+
+    function updateText (text: string) {
+        props.dispatch(updateTextAC(text))
+    }
+
+    const postsMap = props.posts.map((el, idx) => <Post key={idx} {...el} />)
     return (
         <Container as={'section'} style={{overflowY: 'scroll'}}>
             <ProfileBanner>
@@ -33,31 +51,9 @@ export const Profile = () => {
                     </li>
                 </ProfileTabs>
             </ProfileBanner>
-            <Textarea/>
+            <Textarea onClick={addPost} value={props.text} onChange={updateText}/>
             <PostsContainer>
-                <Post/>
-                <Post/>
-                <Post/>
-                <Post/>
-                <Post/>
-                <Post/>
-                <Post/>
-                <Post/>
-                <Post/>
-                <Post/>
-                <Post/>
-                <Post/>
-                <Post/>
-                <Post/>
-                <Post/>
-                <Post/>
-                <Post/>
-                <Post/>
-                <Post/>
-                <Post/>
-                <Post/>
-                <Post/>
-                <Post/>
+                {postsMap}
             </PostsContainer>
         </Container>
     )
@@ -128,11 +124,9 @@ const PostsContainer = styled.ul`
     justify-content: flex-start;
     align-items: stretch;
     text-align: left;
-    //height: 100%;
     width: 100%;
     margin: 1rem 0;
     border-radius: 1.6rem;
     padding: 1rem .5rem;
-    //overflow-y: scroll;
     gap: 2rem;
 `

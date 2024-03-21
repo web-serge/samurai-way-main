@@ -50,7 +50,6 @@ export const GlobalStyles = createGlobalStyle`
     cursor: pointer;
     border: none;
     background: transparent;
-    line-height: 0;
     font-size: inherit;
     color: inherit;
     font-family: inherit;
@@ -78,7 +77,9 @@ export const GlobalStyles = createGlobalStyle`
 
   main {
     height: 100%;
- 
+    max-width: 1024px;
+      width: 100%;
+      margin: 0 auto;
     text-align: center;
     font-size: 3rem;
 

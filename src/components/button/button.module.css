@@ -1,0 +1,27 @@
+.button {
+    background: rgb(0 167 111 / 60%);
+    padding: 10px 35px;
+    color: white;
+    border-radius: 10px;
+    font-size: 20px;
+    transition: all .3s;
+    outline: none;
+    cursor: pointer;
+    border: 2px solid transparent;
+
+    & svg {
+        transition: .3s;
+        margin-left: .5rem;
+    }
+
+    &:hover, &:focus-visible {
+        background-color: white;
+        color: #00a76f;
+        border: 2px solid #00a76f;
+        box-shadow: 5px 3px 1px rgba(211, 211, 211, 0.5);
+    }
+
+    &:active svg {
+        transform: translateX(8px);
+    }
+}

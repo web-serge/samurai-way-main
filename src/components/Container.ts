@@ -6,8 +6,8 @@ export const Container = styled.div `
   width: 100%;
   height: 100%;
   margin: 0 auto;
-    padding: 5px 5px 5px ${theme.size.asideWidth}rem;
-    
+    //padding: 5px 5px 5px ${theme.size.asideWidth}rem;
+    padding: 5px ;
     @media ${theme.media.mobile} {
         padding-left: 5px;
     }
