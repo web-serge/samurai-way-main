@@ -6,23 +6,25 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {Textarea} from '../../components/Textarea';
 import {Post} from '../../components/Post';
 import s from './style.module.css';
-import {ActionType, PostType} from '../../store';
 import React from 'react';
-import {addPostAC, updateTextAC} from '../../redux/profile-reducer';
+import {ActionProfileType, addPostAC, PostType, updateTextAC} from '../../redux/profile-reducer';
 
 type ProfileType = {
     posts: PostType[]
-    dispatch: (action: ActionType) => void
     text: string
+    updateText: (value: string)=>void
+    addPost: () =>void
 }
 export const Profile = (props: ProfileType) => {
 
     function addPost() {
-        props.dispatch(addPostAC())
+        props.addPost()
+        //props.dispatch(addPostAC())
     }
 
-    function updateText (text: string) {
-        props.dispatch(updateTextAC(text))
+    function updateText (newText: string) {
+      //  props.dispatch(updateTextAC(text))
+        props.updateText(newText)
     }
 
     const postsMap = props.posts.map((el, idx) => <Post key={idx} {...el} />)

@@ -3,7 +3,7 @@ import Message from './messages-item/Message';
 import FriendMessage from './friend-message/FriendMessage';
 import MessageSender from './message-sender/MessageSender';
 import './chat.css'
-import {MessagesType} from '../../store';
+import {MessagesType} from '../../redux/messages-reducer';
 
 type UserType = {
     avatar: string

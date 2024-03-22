@@ -1,10 +1,17 @@
+export let a = 1
+/*
 import {ActionProfileType, ProfileReducer} from './redux/profile-reducer';
+import {ReduxStoreType} from './index';
 
 export type PostType = {
     id: number
     imgUrl: string | null
     description: string
     likeCount: number
+}
+export type ProfilePageType = {
+    posts: PostType[]
+    _text: string
 }
 export type MessageType = {
     id: number
@@ -29,10 +36,7 @@ export type MessagesType = {
     },
 }
 
-export type ProfilePageType = {
-    posts: PostType[]
-    _text: string
-}
+
 export type StateType = {
     membersPage: { usersList: UserListType[] }
     messagesPage: MessagesType[],
@@ -42,7 +46,7 @@ export type StateType = {
 export type StoreType = {
     _state: StateType
     onChange: (state: StateType) => void
-    subscribe: (callback: (state: StateType) => void) => void
+    subscribe: (callback: (state: ReduxStoreType) => void) => void
     getState: () => StateType
     dispatch: (action: ActionType) => void
 }
@@ -157,8 +161,8 @@ export let store: StoreType = {
     },
     onChange() {
     },
-    subscribe(observer: (state: StateType) => void) {
-        this.onChange = observer
+    subscribe(observer: (state: ReduxStoreType) => void) {
+        // this.onChange = observer
     },
 
     dispatch(action: ActionType) {
@@ -168,4 +172,4 @@ export let store: StoreType = {
 }
 export type ActionType = ActionProfileType
 
-// window.store = store
+// window.store = store*/

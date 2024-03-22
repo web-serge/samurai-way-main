@@ -6,14 +6,15 @@ import {Profile} from './layout/profile/Profile';
 import {Dialogs} from './layout/messeges/Dialogs';
 import {Members} from './layout/members/Members';
 import News from './layout/news/News';
-import {ActionType, StateType, StoreType} from './store';
+import {ReduxStoreType} from './redux/store';
+import {ProfileContainer} from './layout/profile/ProfileContainer';
 
 type AppType = {
-    state: StateType
-    dispatch: (action: ActionType) => void
+    store: ReduxStoreType
+    dispatch: (action: any) => void
 }
 
-function App({state, dispatch}: AppType) {
+function App({store, dispatch}: AppType) {
     let [isAside, setIsAside] = useState<boolean>(true)
 
     function toggleMenu() {
@@ -24,13 +25,11 @@ function App({state, dispatch}: AppType) {
         <>
             <Header menu={isAside} toogleMenu={toggleMenu}/>
             <main>
-                {isAside && <Aside asideItem={state.aside}/>}
-                <Route exact path={'/'} render={() => <Profile posts={state.profilePage.posts}
-                                                               dispatch={dispatch}
-                                                               text={state.profilePage._text}/>}/>
+                {isAside && <Aside asideItem={store.getState().aside}/>}
+                <Route exact path={'/'} render={() => <ProfileContainer store={store} />}/>
                 <Route path={'/news'} render={() => <News/>}/>
-                <Route path={'/dialogs'} render={() => <Dialogs usersList={state.membersPage.usersList} messages={state.messagesPage}/>}/>
-                <Route path={'/members'} render={() => <Members usersList={state.membersPage.usersList}/>}/>
+                <Route path={'/dialogs'} render={() => <Dialogs usersList={store.getState().membersPage} messages={store.getState().messagesPage}/>}/>
+                <Route path={'/members'} render={() => <Members usersList={store.getState().membersPage}/>}/>
             </main>
         </>
     );

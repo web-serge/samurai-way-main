@@ -5,21 +5,24 @@ import {ThemeProvider} from 'styled-components';
 import {theme} from './styles/theme';
 import {GlobalStyles} from './styles/GlobalStyles';
 import {BrowserRouter} from 'react-router-dom';
-import {StateType, store, StoreType} from './store';
+import {store, ReduxStoreType} from './redux/store';
 
-
-function rerenderEntireTree (state: StateType) {
+function rerenderEntireTree(state: ReduxStoreType) {
     ReactDOM.render(
         <BrowserRouter>
             <ThemeProvider theme={theme}>
                 <GlobalStyles/>
-                <App state={state} dispatch={store.dispatch.bind(store)}/>
+                <App store={state} dispatch={state.dispatch}/>
             </ThemeProvider>
         </BrowserRouter>,
         document.getElementById('root')
     );
 }
 
-rerenderEntireTree(store.getState())
+rerenderEntireTree(store)
 
-store.subscribe(rerenderEntireTree)
+console.log(store)
+
+store.subscribe(() => {
+    rerenderEntireTree(store)
+})

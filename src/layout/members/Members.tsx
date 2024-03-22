@@ -6,9 +6,7 @@ import {faFilter} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {Container} from '../../components/Container';
 import {theme} from '../../styles/theme';
-import {UserListType} from '../../store';
-
-
+import {UserListType} from '../../redux/members-reducer';
 
 type MembersPropsType = {
     usersList: UserListType[]

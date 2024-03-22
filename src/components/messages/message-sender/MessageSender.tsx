@@ -1,8 +1,8 @@
 import React, {ChangeEvent, KeyboardEvent, useState} from 'react'
 import s from './MessageSender.module.css'
-import {MessagesType} from '../../../store';
 import Message from '../messages-item/Message';
 import {Button} from '../../button/Button';
+import {MessagesType} from '../../../redux/messages-reducer';
 
 const MessageSender = (props: { myMessage: MessagesType }) => {
     const [messages, setMessages] = useState<any[]>([])

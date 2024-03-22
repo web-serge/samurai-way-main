@@ -3,7 +3,8 @@ import {Flex} from '../../components/Flex';
 import React from 'react';
 import {DialogsList} from './components/DialogsList';
 import {Chat} from '../../components/messages/Chat';
-import {MessagesType, UserListType} from '../../store';
+import {UserListType} from '../../redux/members-reducer';
+import {MessagesType} from '../../redux/messages-reducer';
 
 type MessagesPropsType = {
     usersList: Array<UserListType>

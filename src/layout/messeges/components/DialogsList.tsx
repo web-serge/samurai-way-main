@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {theme} from '../../../styles/theme';
 import {Link} from 'react-router-dom';
-import {UserListType} from '../../../store';
+import {UserListType} from '../../../redux/members-reducer';
 
 type DialogsListPropsType = {
     usersList: Array<UserListType>

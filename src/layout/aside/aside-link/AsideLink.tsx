@@ -1,6 +1,6 @@
 import {NavLink} from 'react-router-dom';
 import React from 'react';
-import {AsideLinkType} from '../../../store';
+import {AsideLinkType} from '../../../redux/navbar-reducer';
 
 export const AsideLink = ({href, name, icon}: AsideLinkType) => {
     return (

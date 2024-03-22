@@ -25,8 +25,8 @@ const TextContainer = styled.form`
     }
 `
 
-export const Textarea = (props: {onClick: () => void, value: string, onChange: (text: string)=>void }) => {
-    const textareaRef = React.createRef<HTMLTextAreaElement>()
+export const Textarea = (props: { onClick: () => void, value: string, onChange: (text: string) => void }) => {
+    //const textareaRef = React.createRef<HTMLTextAreaElement>()
 
     function onClickHandler() {
         // if (textareaRef.current) {
@@ -35,16 +35,18 @@ export const Textarea = (props: {onClick: () => void, value: string, onChange: (
         // }
         props.onClick()
     }
+
     function onChangeHandler(e: ChangeEvent<HTMLTextAreaElement>) {
         props.onChange(e.currentTarget.value)
     }
+
     return (
         <TextContainer>
             <textarea placeholder={'Write your message...'}
-                      ref={textareaRef}
-                        onChange={onChangeHandler}
+                //ref={textareaRef}
+                      onChange={onChangeHandler}
                       value={props.value}/>
-            <Button name='Send &#9993;' onClick={onClickHandler} />
+            <Button name='Send &#9993;' onClick={onClickHandler}/>
         </TextContainer>
     )
 }

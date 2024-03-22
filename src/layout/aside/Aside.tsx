@@ -1,8 +1,7 @@
 import {S} from './styledAside'
 import React from 'react';
 import {AsideLink} from './aside-link/AsideLink';
-import {AsideLinkType} from '../../store';
-
+import {AsideLinkType} from '../../redux/navbar-reducer';
 
 export const Aside = (props: {asideItem: AsideLinkType[]}) => {
 

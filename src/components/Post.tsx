@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {theme} from '../styles/theme';
-import {PostType} from '../store';
+import {PostType} from '../redux/profile-reducer';
 export const Post = ({imgUrl, likeCount, description}: PostType) => {
     function onLikeHandler() {
 
